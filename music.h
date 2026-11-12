@@ -1,3 +1,5 @@
+#ifndef MUSIC
+#define MUSIC
 #include <iostream>
 #include <cstring>
 #include "media.h"
@@ -11,14 +13,16 @@ class music : public media{
   void getDurationM();
   void getDurationS();
   void getPublisher();
-  void returnArtist();
-  void returnDurationM();
-  void returnDurationS();
-  void returnPublisher();
+  char* returnArtist();
+  int returnDurationM();
+  int returnDurationS();
+  char* returnPublisher();
 
  protected:
   char artist[30];
   int durationM;
   int durationS;
-  char publisher;
+  char publisher[30];
 };  
+
+#endif

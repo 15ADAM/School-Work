@@ -14,11 +14,17 @@ void videoGames::getPublisher(){
 }
 
 void videoGames::getRating(){
-  cin >> rating;
+  cin >> falseRating;
   cin.ignore();
+  while(falseRating > 10 || falseRating < 0){
+    cout << "invalid rating. Enter a number between 0 and 10: " << endl;
+    cin >> falseRating;
+    cin.ignore();
+  }
+  rating = falseRating;
 }
 
-const char* videoGames::returnPublisher(){
+char* videoGames::returnPublisher(){
   return publisher;
 }
 

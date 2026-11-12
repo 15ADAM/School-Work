@@ -1,3 +1,5 @@
+#ifndef MEDIA
+#define MEDIA
 #include <iostream>
 #include <cstring>
 
@@ -6,10 +8,10 @@ using namespace std;
 class media {
 public:
   media();
-  const char* getID();
+  char* getID();
   void getTitle();
   void getYear();
-  const char* returnTitle();
+  char* returnTitle();
   int returnYear();
   
 protected:
@@ -17,3 +19,5 @@ protected:
   int year;
   char id[10];
 };
+
+#endif

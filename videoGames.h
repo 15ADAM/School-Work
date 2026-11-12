@@ -1,3 +1,5 @@
+#ifndef VIDEOGAMES
+#define VIDEOGAMES
 #include <iostream>
 #include <cstring>
 #include "media.h"
@@ -9,10 +11,13 @@ class videoGames : public media{
   videoGames();
   void getPublisher();
   void getRating();
-  const char* returnPublisher();
+  char* returnPublisher();
   int returnRating();
 
  protected:
   char publisher[30];
   int rating;
+  int falseRating;
 };
+
+#endif

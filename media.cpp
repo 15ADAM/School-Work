@@ -8,7 +8,7 @@ media::media(){
   strcpy(id, "MEDIA");
 }
 
-const char* media::getID(){
+char* media::getID(){
   return id;
 }
 
@@ -22,7 +22,7 @@ void media::getYear(){
   cin.ignore();
 }
 
-const char* media::returnTitle(){
+char* media::returnTitle(){
   return title;
 }
 
