@@ -1,20 +1,24 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
-#include "media.h"
+#include "media.h"//delete
+#include "videoGames.h"
 
 using namespace std;
 
 int main(){
 //янт
-  media* g = new media();
+  videoGames* g = new videoGames();
   cout << "print a title:" << endl;
   g->getTitle();
-  g->printTitle();
+  cout << g->returnTitle() << endl;
   cout << endl;
-  if(strcmp(g->getID(), "MEDIA") == 0){
+  if(strcmp(g->getID(), "VIDEOGAME") == 0){
     cout << "print a year:" << endl;
     g->getYear();
-    g->printYear();
+    cout << g->returnYear() << endl;
+    cout << "print a rating";
+    g->getRating();
+    cout << g->returnRating() << endl;
   }
 }

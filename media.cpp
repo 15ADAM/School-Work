@@ -22,12 +22,12 @@ void media::getYear(){
   cin.ignore();
 }
 
-void media::printTitle(){
-  cout << title;
+const char* media::returnTitle(){
+  return title;
 }
 
-void media::printYear(){
-  cout << year;
+int media::returnYear(){
+  return year;
 }
 
 
