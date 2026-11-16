@@ -8,6 +8,8 @@ media::media(){
   strcpy(id, "MEDIA");
 }
 
+media::~media(){}
+
 char* media::getID(){
   return id;
 }
