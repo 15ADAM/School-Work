@@ -1,10 +1,12 @@
-// Adam Bendersky, 10/15/2026, a program that lets you make a list of students, adding, deleting, and printing them
+// Adam Bendersky, 10/15/2026, a program that lets you make a list of students, adding, deleting, and printing them// Adam Bendersky, 10/02/2026, a tic tac toe game for 2 players(get 3 in a row to win!)
 /*
 1. No global variables. (Global constants are all right.)
 
-2. No strings. Not ever. (You can use cstrings/character arrays, and the cstring and cctype libraries are okay. In fact, I reccoment using strcmp and strlen in your projects.)
+2. No strings. Not ever. (You can use cstrings/character arrays, and the cstring and cctype libraries are okay. In fact, I reccoment \
+using strcmp and strlen in your projects.)
 
-3. You should include <iostream>, not stdio. (This applies more to C programmers.) Also, use "new" and "delete" instead of "malloc" and "free".
+3. You should include <iostream>, not stdio. (This applies more to C programmers.) Also, use "new" and "delete" instead of "malloc" a\
+nd "free".
 */
 #include <iostream>
 #include <cstring>

@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int Game()
+{
+  srand(time(NULL));
+  int num = (rand() % 101);
+  int enterNum = 101;
+  cout << num << endl;
+  cout << "Enter a number: ";
+  while (enterNum != num){
+    cin >> enterNum;
+    if (enterNum > num){
+      cout << "wrong, try a lower number: ";
+    }
+    else if (enterNum < num){
+      cout << "wrong, try a higher number: ";
+    }
+  }
+  cout << "You Guessed The Number!" << endl;
+  return 0;
+}
+
+int main()
+{
+  bool stillPlaying = true;
+  char wannaPlay = 'n';
+  Game();
+  while (stillPlaying){
+    cout << "want to keep playing?(y/n)" << endl;
+    cin >> wannaPlay;
+    if (wannaPlay == 'y'){
+      Game();
+    }
+    else if (wannaPlay == 'n'){
+      stillPlaying = false;
+    }
+  }
+}
