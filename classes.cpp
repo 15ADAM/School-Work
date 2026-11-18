@@ -26,6 +26,9 @@ void addMedia(vector<media*> &v);
 void searchAndDel(vector<media*> &v);
 
 //main code
+void addMedia(vector<media*> &v);
+void searchAndDel(vector<media*> &v);
+
 int main(){
 //янт
   //all the variables
@@ -224,4 +227,99 @@ void searchAndDel(vector<media*> &v){
     cout << "Deleted all the files successfully!" << endl;
     cout << endl;
   }
+}
+
+void addMedia(vector<media*> &v){
+  char choice[15];
+  media* c;
+  cout << "What type of media do you want to add?(video game, music, movie)" << endl;
+  cin.get(choice, 15);
+  cin.get();
+  cout << endl;
+  while (strcmp(choice, "video game") != 0 && strcmp(choice, "music") != 0 && strcmp(choice, "movie") != 0){
+    cout << "There is no such type of media. Try again(video game, music, movie)" << endl;
+    cin.get(choice, 15);
+    cin.get();
+    cout << endl;
+  }
+  if (strcmp(choice, "video game") == 0){
+    videoGames* m = new videoGames();
+    cout << "Enter the publisher of the game:" << endl;
+    m->getPublisher();
+    cout << endl;
+    cout << "Enter the rating of the game(out of 10): " << endl;
+    m->getRating();
+    cout << endl;
+    c = m;
+  }
+  else if (strcmp(choice, "music") == 0){
+    music* m = new music();
+    cout << "Enter the artist of the song:" << endl;
+    m->getArtist();
+    cout << endl;
+    cout << "Enter the duration of the song(minutes):" << endl;
+    m->getDurationM();
+    cout << endl;
+    cout << "Enter the duration of the song(seconds):" << endl;
+    m->getDurationS();
+    cout << endl;
+    cout << "Enter the publisher of the song:" << endl;
+    m->getPublisher();
+    cout << endl;
+    c = m;
+  }
+  else if (strcmp(choice, "movie") == 0){
+    movies* m = new movies();
+    cout << "Enter the director of the movie:" << endl;
+    m->getDirector();
+    cout << endl;
+    cout << "Enter the duration of the movie(hours):" << endl;
+    m->getDurationH();
+    cout << endl;
+    cout << "Enter the duration of the movie(minutes):" << endl;
+    m->getDurationM();
+    cout << endl;
+    cout << "Enter the rating of the movie(out of 10):" << endl;
+    m->getRating();
+    cout << endl;
+    c = m;
+  }
+  cout << "Enter it's title: " << endl;
+  c->getTitle();
+  cout << endl;
+  cout << "Enter the year of which it was published: " << endl;
+  c->getYear();
+  cout << endl;
+  v.push_back(c);
+  cout << "Your digital media was succesfully added!" << endl;
+  cout << endl;
+}
+
+void searchAndDel(vector<media*> &v){
+  char choice[10];
+  int year;
+  char title[30];
+  cout << "Do you want to search by title or year?" << endl;
+  cin.get(choice, 10);
+  cin.get();
+  cout << endl;
+  while (strcmp(choice, "year") != 0 && strcmp(choice, "title") != 0){
+    cout << "Invalid command. try again(title, year):" << endl;
+    cin.get(choice, 10);
+    cin.get();
+  }
+  for (media* m : v){
+    if (strcmp(m->getID(), "VIDEOGAME") == 0){
+      videoGames* c = static_cast<videoGames*>(m);
+      cout << "Title: " << c->returnTitle() << " Year published: " << c->returnYear() << " Publisher: " << c->returnPublisher() << " Rating: " << c->returnRating() << "/10" << endl; 
+    }
+    else if (strcmp(m->getID(), "MUSIC") == 0){
+      music* c = static_cast<music*>(m);
+      cout << "Title: " << c->returnTitle() << " Year published: " << c->returnYear() << " Artist: " << c->returnArtist() << " Duration: " << c->returnDurationM() << " minutes, and " << c->returnDurationS() << " seconds " << "Publisher: " << c->returnPublisher() << endl;
+    }
+    else if (strcmp(m->getID(), "MOVIES") == 0){
+      movies* c = static_cast<movies*>(m);
+      cout << "Title: " << c->returnTitle() << " Year published: " << c->returnYear() << " Director: " << c->returnDirector() << " Duration: " << c->returnDurationH() << " hours, and " << c->returnDurationM() << " minutes " << "Rating: " << c->returnRating() << "/10" << endl;
+    }
+  }    
 }
