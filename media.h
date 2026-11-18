@@ -1,3 +1,8 @@
+/*
+the .h file for the media parent class, it has a title, year, and id which all the child classes will have 
+
+the child classes will have similar structure, just with different variables
+*/
 #ifndef MEDIA
 #define MEDIA
 #include <iostream>
